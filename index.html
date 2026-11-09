@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Product Strategy — Senior product leadership. On demand deliverables.</title>
+<meta name="description" content="Independent senior product leadership on a fractional, digital-only basis. Helping companies make better product decisions, build stronger product organisations and accelerate value delivery of data, analytics and AI products.">
+<meta property="og:title" content="Product Strategy">
+<meta property="og:description" content="Senior product leadership. On demand deliverables.">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 96 96'%3E%3Crect width='96' height='96' rx='22' fill='%2314161A'/%3E%3Crect x='24' y='28' width='24' height='10' rx='5' fill='%23fff'/%3E%3Crect x='24' y='43' width='36' height='10' rx='5' fill='%23fff'/%3E%3Crect x='24' y='58' width='48' height='10' rx='5' fill='%232F4BFF'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#FAFAF7;
+    --bg-alt:#F1F0EA;
+    --ink:#14161A;
+    --ink-soft:#4A4F57;
+    --ink-faint:#8A8F96;
+    --line:#E2E0D8;
+    --accent:#2F4BFF;
+    --accent-soft:#E6EAFF;
+    --dark:#101216;
+    --radius:14px;
+    --max:1120px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Inter',system-ui,-apple-system,sans-serif;
+    background:var(--bg);color:var(--ink);
+    font-size:17px;line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+  .serif{font-family:'Instrument Serif',Georgia,serif;font-weight:400}
+  .eyebrow{
+    font-size:13px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--accent);margin-bottom:18px;display:block
+  }
+
+  /* Nav */
+  nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(250,250,247,.85);
+    backdrop-filter:saturate(180%) blur(12px);
+    -webkit-backdrop-filter:saturate(180%) blur(12px);
+    border-bottom:1px solid transparent;transition:border-color .3s;
+  }
+  nav.scrolled{border-bottom-color:var(--line)}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:68px}
+  .logo{font-weight:600;font-size:18px;letter-spacing:-.02em;display:flex;align-items:center;gap:10px}
+  .logo-mark{width:28px;height:28px;display:block;flex-shrink:0}
+  .nav-links{display:flex;gap:32px;font-size:15px;color:var(--ink-soft)}
+  .nav-links a:hover{color:var(--ink)}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    background:var(--ink);color:#fff;font-weight:500;font-size:15px;
+    padding:12px 22px;border-radius:999px;transition:transform .2s,background .2s;
+  }
+  .btn:hover{background:var(--accent);transform:translateY(-1px)}
+  .btn-ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+  .btn-ghost:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
+  .nav .btn{padding:9px 18px;font-size:14px}
+
+  /* Hero */
+  .hero{padding:120px 0 110px}
+  .hero h1{
+    font-size:clamp(46px,8vw,96px);line-height:.98;letter-spacing:-.035em;
+    font-weight:500;max-width:14ch;
+  }
+  .hero h1 em{font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-weight:400;color:var(--accent)}
+  .hero p.lead{
+    margin-top:36px;max-width:640px;font-size:clamp(18px,2vw,21px);color:var(--ink-soft);line-height:1.55
+  }
+  .hero-cta{margin-top:44px;display:flex;gap:12px;flex-wrap:wrap}
+  .hero-meta{
+    margin-top:90px;padding-top:28px;border-top:1px solid var(--line);
+    display:grid;grid-template-columns:repeat(4,1fr);gap:24px;
+  }
+  .hero-meta div strong{display:block;font-size:30px;font-weight:500;letter-spacing:-.02em}
+  .hero-meta div span{font-size:14px;color:var(--ink-faint)}
+
+  section{padding:110px 0}
+  h2{
+    font-size:clamp(34px,5vw,56px);line-height:1.05;letter-spacing:-.03em;font-weight:500;max-width:18ch
+  }
+  h2 em{font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-weight:400}
+  .section-intro{margin-top:22px;max-width:600px;color:var(--ink-soft);font-size:18px}
+
+  /* Pillars */
+  .pillars{margin-top:64px;display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+  .pillar{background:var(--bg);padding:36px 32px}
+  .pillar .num{font-family:'Instrument Serif',serif;font-size:40px;color:var(--accent);line-height:1}
+  .pillar h3{margin-top:20px;font-size:21px;font-weight:600;letter-spacing:-.01em}
+  .pillar p{margin-top:10px;color:var(--ink-soft);font-size:16px}
+
+  /* Services */
+  #services{background:var(--bg-alt)}
+  .services{margin-top:64px;display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+  .service{
+    background:var(--bg);border:1px solid var(--line);border-radius:var(--radius);
+    padding:36px;display:flex;flex-direction:column;transition:transform .25s,box-shadow .25s,border-color .25s;
+  }
+  .service:hover{transform:translateY(-3px);box-shadow:0 18px 40px -20px rgba(20,22,26,.18);border-color:#cfcdc4}
+  .service-head{display:flex;justify-content:space-between;align-items:baseline;gap:16px}
+  .service-head .idx{font-size:14px;color:var(--ink-faint);font-variant-numeric:tabular-nums}
+  .service h3{font-size:26px;font-weight:500;letter-spacing:-.02em;line-height:1.2}
+  .service p{margin-top:14px;color:var(--ink-soft);font-size:16px;flex:1}
+  .deliverable{
+    margin-top:28px;padding:16px 18px;border-radius:10px;background:var(--accent-soft);
+    font-size:15px;display:flex;gap:12px;align-items:flex-start
+  }
+  .deliverable svg{flex-shrink:0;margin-top:3px}
+  .deliverable b{display:block;font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:2px}
+
+  /* Experience */
+  .exp-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:80px;align-items:start}
+  .exp-text p{margin-top:22px;color:var(--ink-soft);font-size:18px}
+  .exp-list{list-style:none;margin-top:32px}
+  .exp-list li{padding:14px 0;border-top:1px solid var(--line);display:flex;gap:14px;font-size:16px}
+  .exp-list li:last-child{border-bottom:1px solid var(--line)}
+  .exp-list li::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--accent);margin-top:10px;flex-shrink:0}
+  .industries-label{font-size:13px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:20px}
+  .chips{display:flex;flex-wrap:wrap;gap:10px}
+  .chip{
+    padding:12px 20px;border:1px solid var(--line);border-radius:999px;font-size:16px;background:#fff;
+    transition:background .2s,color .2s,border-color .2s
+  }
+  .chip:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
+  .domains{margin-top:44px}
+
+  /* How it works */
+  .steps{margin-top:64px;display:grid;grid-template-columns:repeat(4,1fr);gap:28px;counter-reset:step}
+  .step{border-top:2px solid var(--ink);padding-top:22px;counter-increment:step}
+  .step::before{content:"0" counter(step);font-size:14px;color:var(--ink-faint);font-variant-numeric:tabular-nums}
+  .step h3{margin-top:10px;font-size:20px;font-weight:600;letter-spacing:-.01em}
+  .step p{margin-top:8px;color:var(--ink-soft);font-size:15px}
+
+  /* Contact */
+  #contact{background:var(--dark);color:#fff;padding:130px 0 0}
+  #contact .eyebrow{color:#8FA0FF}
+  #contact h2{max-width:16ch;font-size:clamp(40px,6.5vw,80px)}
+  #contact h2 em{color:#8FA0FF}
+  #contact .section-intro{color:#A9AEB6}
+  .contact-cta{margin-top:44px;display:flex;gap:12px;flex-wrap:wrap}
+  #contact .btn{background:#fff;color:var(--ink)}
+  #contact .btn:hover{background:var(--accent);color:#fff}
+  #contact .btn-ghost{background:transparent;color:#fff;border-color:#33373F}
+  #contact .btn-ghost:hover{border-color:#fff}
+  footer{
+    margin-top:120px;padding:32px 0;border-top:1px solid #23262C;
+    display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:14px;color:#7D828A
+  }
+  footer a:hover{color:#fff}
+
+  /* Reveal */
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .8s ease,transform .8s ease}
+  .reveal.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    .reveal{opacity:1;transform:none;transition:none}
+  }
+
+  /* Responsive */
+  @media (max-width:900px){
+    .nav-links{display:none}
+    .hero{padding:80px 0 80px}
+    .hero-meta{grid-template-columns:repeat(2,1fr);margin-top:64px}
+    section{padding:84px 0}
+    .pillars,.services{grid-template-columns:1fr}
+    .exp-grid{grid-template-columns:1fr;gap:48px}
+    .steps{grid-template-columns:repeat(2,1fr)}
+  }
+  @media (max-width:520px){
+    body{font-size:16px}
+    .wrap{padding:0 16px}
+    .service{padding:28px 24px}
+    .steps{grid-template-columns:1fr}
+    .nav .btn{display:none}
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a href="#top" class="logo"><svg class="logo-mark" viewBox="0 0 96 96" aria-hidden="true"><rect width="96" height="96" rx="22" fill="#14161A"/><rect x="24" y="28" width="24" height="10" rx="5" fill="#fff"/><rect x="24" y="43" width="36" height="10" rx="5" fill="#fff"/><rect x="24" y="58" width="48" height="10" rx="5" fill="#2F4BFF"/></svg>productstrategy</a>
+    <div class="nav-links">
+      <a href="#approach">Approach</a>
+      <a href="#services">Services</a>
+      <a href="#experience">Experience</a>
+      <a href="#how">How it works</a>
+    </div>
+    <a href="#contact" class="btn">Get in touch</a>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <span class="eyebrow reveal">Fractional · Independent · Digital-only</span>
+    <h1 class="reveal">Senior product leadership. <em>On demand deliverables.</em></h1>
+    <p class="lead reveal">Helping companies make better product decisions, build stronger product organisations and accelerate value delivery of data, analytics and AI products.</p>
+    <div class="hero-cta reveal">
+      <a href="#services" class="btn">Explore services
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 3v10m0 0l-4-4m4 4l4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="#contact" class="btn btn-ghost">Start a conversation</a>
+    </div>
+    <div class="hero-meta reveal">
+      <div><strong>15+</strong><span>years in product leadership</span></div>
+      <div><strong>6</strong><span>industries served</span></div>
+      <div><strong>6</strong><span>services, each with a clear deliverable</span></div>
+      <div><strong>100%</strong><span>remote &amp; flexible</span></div>
+    </div>
+  </div>
+</header>
+
+<section id="approach">
+  <div class="wrap">
+    <span class="eyebrow reveal">The approach</span>
+    <h2 class="reveal">Senior expertise, <em>without the full-time hire.</em></h2>
+    <p class="section-intro reveal">Independent senior product leadership, available flexibly on a fractional basis. You get director-level thinking exactly when you need it, focused on a concrete outcome.</p>
+    <div class="pillars">
+      <div class="pillar reveal">
+        <div class="num">i.</div>
+        <h3>Better product decisions</h3>
+        <p>Clarity on what to build, why, and for whom — grounded in evidence rather than opinion.</p>
+      </div>
+      <div class="pillar reveal">
+        <div class="num">ii.</div>
+        <h3>Stronger product organisations</h3>
+        <p>The people, roles, structures and ways of working that let product teams perform.</p>
+      </div>
+      <div class="pillar reveal">
+        <div class="num">iii.</div>
+        <h3>Faster value delivery</h3>
+        <p>Turning data, analytics and AI investments into products that create measurable value.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <span class="eyebrow reveal">Services</span>
+    <h2 class="reveal">Six services. <em>Six clear deliverables.</em></h2>
+    <p class="section-intro reveal">Every engagement is scoped around a tangible output you keep — not open-ended hours.</p>
+
+    <div class="services">
+      <article class="service reveal">
+        <div class="service-head"><h3>Product discovery</h3><span class="idx">01</span></div>
+        <p>Validate problems, users and opportunities before committing budget and teams. Reduce the risk of building the wrong thing.</p>
+        <div class="deliverable">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3 3 7-7" stroke="#2F4BFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <div><b>Deliverable</b>Discovery report with validated problem statements and use cases, a business value opportunity assessment and a clear go / no-go recommendation.</div>
+        </div>
+      </article>
+
+      <article class="service reveal">
+        <div class="service-head"><h3>Product landscape</h3><span class="idx">02</span></div>
+        <p>A clear, shared view of your current products, platforms and capabilities — where they overlap, where the gaps are, and where value is being lost.</p>
+        <div class="deliverable">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3 3 7-7" stroke="#2F4BFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <div><b>Deliverable</b>Product landscape map with an assessment of overlaps, gaps and prioritised improvement areas.</div>
+        </div>
+      </article>
+
+      <article class="service reveal">
+        <div class="service-head"><h3>Product vision &amp; roadmap</h3><span class="idx">03</span></div>
+        <p>Connect strategy to execution with a compelling vision and an outcome-driven roadmap that teams and stakeholders can align around.</p>
+        <div class="deliverable">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3 3 7-7" stroke="#2F4BFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <div><b>Deliverable</b>Product vision, strategy narrative and an outcome-based roadmap with success metrics.</div>
+        </div>
+      </article>
+
+      <article class="service reveal">
+        <div class="service-head"><h3>Product people coaching</h3><span class="idx">04</span></div>
+        <p>One-to-one and team coaching for product managers, product owners and product leaders who want to grow their craft and impact.</p>
+        <div class="deliverable">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3 3 7-7" stroke="#2F4BFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <div><b>Deliverable</b>Maturity assessment and product frameworks applied to real examples in your company.</div>
+        </div>
+      </article>
+
+      <article class="service reveal">
+        <div class="service-head"><h3>Product operating model</h3><span class="idx">05</span></div>
+        <p>Define how product work gets done — from roles and decision rights to governance, rituals and the metrics that matter.</p>
+        <div class="deliverable">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3 3 7-7" stroke="#2F4BFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <div><b>Deliverable</b>Operating model blueprint covering roles, decision rights, governance, cadence and KPIs.</div>
+        </div>
+      </article>
+
+      <article class="service reveal">
+        <div class="service-head"><h3>Product organization design</h3><span class="idx">06</span></div>
+        <p>Shape a product organisation that scales — team topology, role definitions and career paths aligned with your strategy.</p>
+        <div class="deliverable">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3 3 7-7" stroke="#2F4BFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <div><b>Deliverable</b>Product organisation options with a recommended design, team structure, role profiles and a transition plan.</div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap exp-grid">
+    <div class="exp-text">
+      <span class="eyebrow reveal">Experience</span>
+      <h2 class="reveal">Built in <em>complex, international</em> organisations.</h2>
+      <p class="reveal">A senior product director with 15+ years in product roles driving digital transformation and business process innovation, in both business and IT organisations, across digital, data, analytics and AI.</p>
+      <ul class="exp-list reveal">
+        <li>Specialised in end-to-end supply chain, with additional experience across sales, marketing, merchandising and finance</li>
+        <li>From hands-on product owner of a single team to leading multiple product teams</li>
+        <li>Strategic advisor in operating model and organisation redesigns to evolve product and capability building</li>
+      </ul>
+    </div>
+    <div>
+      <p class="industries-label reveal">Industries</p>
+      <div class="chips reveal">
+        <span class="chip">Automotive</span>
+        <span class="chip">Aerospace</span>
+        <span class="chip">Semiconductor</span>
+        <span class="chip">Retail</span>
+        <span class="chip">Sporting goods</span>
+        <span class="chip">Healthcare</span>
+      </div>
+      <div class="domains">
+        <p class="industries-label reveal">Domains</p>
+        <div class="chips reveal">
+          <span class="chip">Digital</span>
+          <span class="chip">Data</span>
+          <span class="chip">Analytics</span>
+          <span class="chip">AI</span>
+          <span class="chip">Supply chain</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="how" style="background:var(--bg-alt)">
+  <div class="wrap">
+    <span class="eyebrow reveal">How it works</span>
+    <h2 class="reveal">Simple, focused, <em>fully remote.</em></h2>
+    <div class="steps">
+      <div class="step reveal">
+        <h3>Intro call</h3>
+        <p>A free conversation to understand your context, challenge and ambitions.</p>
+      </div>
+      <div class="step reveal">
+        <h3>Scope &amp; proposal</h3>
+        <p>A clear proposal with the service, deliverable, timeline and fee.</p>
+      </div>
+      <div class="step reveal">
+        <h3>Delivery</h3>
+        <p>Flexible, fractional collaboration — fully digital, aligned with your team's rhythm.</p>
+      </div>
+      <div class="step reveal">
+        <h3>Handover</h3>
+        <p>You receive the deliverable and the knowledge to act on it independently.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <span class="eyebrow reveal">Contact</span>
+    <h2 class="reveal">Let's talk about your <em>next product decision.</em></h2>
+    <p class="section-intro reveal">Tell me briefly about your challenge. You'll get a reply within two working days.</p>
+    <div class="contact-cta reveal">
+      <a href="mailto:hello@productstrategy.eu" class="btn">hello@productstrategy.eu</a>
+    </div>
+    <footer>
+      <span>© <span id="yr">2026</span> productstrategy</span>
+      <span><a href="#">Privacy</a> &nbsp;·&nbsp; <a href="#">Legal notice</a> &nbsp;·&nbsp; <a href="#top">Back to top ↑</a></span>
+    </footer>
+  </div>
+</section>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 10), {passive:true});
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold:.12, rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
