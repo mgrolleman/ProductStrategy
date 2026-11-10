@@ -68,29 +68,25 @@
   .nav .btn{padding:9px 18px;font-size:14px}
 
   /* Hero */
-  .hero{padding:120px 0 110px}
+  .hero{padding:96px 0 88px}
   .hero h1{
     font-size:clamp(46px,8vw,96px);line-height:.98;letter-spacing:-.035em;
-    font-weight:500;max-width:14ch;
+    font-weight:500;
   }
-  .hero h1 em{font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-weight:400;color:var(--accent)}
+  .hero h1 em{white-space:nowrap;font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-weight:400;color:var(--accent)}
+  .hero h1 .w{display:inline-block;opacity:0;transform:translateY(.3em);animation:wordIn .9s cubic-bezier(.2,.7,.2,1) forwards;animation-delay:calc(var(--i) * 240ms + 100ms)}
+  @keyframes wordIn{to{opacity:1;transform:none}}
+  @media (prefers-reduced-motion:reduce){.hero h1 .w{opacity:1;transform:none;animation:none}}
   .hero p.lead{
-    margin-top:36px;max-width:640px;font-size:clamp(18px,2vw,21px);color:var(--ink-soft);line-height:1.55
+    margin-top:32px;max-width:860px;font-size:clamp(17px,1.8vw,19px);color:var(--ink-soft);line-height:1.55
   }
-  .hero-cta{margin-top:44px;display:flex;gap:12px;flex-wrap:wrap}
-  .hero-meta{
-    margin-top:90px;padding-top:28px;border-top:1px solid var(--line);
-    display:grid;grid-template-columns:repeat(4,1fr);gap:24px;
-  }
-  .hero-meta div strong{display:block;font-size:30px;font-weight:500;letter-spacing:-.02em}
-  .hero-meta div span{font-size:14px;color:var(--ink-faint)}
 
-  section{padding:110px 0}
+  section{padding:88px 0}
   h2{
     font-size:clamp(34px,5vw,56px);line-height:1.05;letter-spacing:-.03em;font-weight:500;max-width:18ch
   }
   h2 em{font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-weight:400}
-  .section-intro{margin-top:22px;max-width:600px;color:var(--ink-soft);font-size:18px}
+  .section-intro{margin-top:22px;max-width:860px;color:var(--ink-soft);font-size:18px}
 
   /* Pillars */
   .pillars{margin-top:48px;display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
@@ -119,10 +115,13 @@
   }
   .front{background:var(--bg);border:1px solid var(--line)}
   .front:hover{box-shadow:0 18px 40px -20px rgba(20,22,26,.18);border-color:#cfcdc4}
-  .back{background:var(--ink);color:#fff;transform:rotateY(180deg);border:1px solid var(--ink)}
+  .back{background:var(--bg);color:var(--ink);transform:rotateY(180deg);border:1px solid var(--line)}
 
-  .service-head{display:flex;justify-content:space-between;align-items:baseline;gap:16px}
-  .idx{font-size:14px;color:var(--ink-faint);font-variant-numeric:tabular-nums}
+  .ico{width:30px;height:30px;color:var(--ink);flex-shrink:0;display:block}
+  .head-meta{display:flex;align-items:center;gap:12px;flex-shrink:0}
+  .head-meta .ico{width:28px;height:28px}
+  .service-head{display:flex;justify-content:space-between;align-items:center;gap:16px}
+  .idx{font-size:14px;font-weight:500;color:var(--accent);font-variant-numeric:tabular-nums}
   .service h3{font-size:26px;font-weight:500;letter-spacing:-.02em;line-height:1.2}
   .front > p{margin-top:12px;color:var(--ink-soft);font-size:16px}
   .deliverable{
@@ -139,24 +138,24 @@
   .flip-btn:hover{color:var(--accent);gap:12px}
   .flip-btn svg{width:16px;height:16px}
 
-  .back-head{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-bottom:12px;border-bottom:1px solid #2A2E35}
-  .back-head .flip-btn{margin-top:0;padding-top:0;color:#fff}
-  .back-head .flip-btn:hover{color:var(--accent-light)}
+  .back-head{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-bottom:12px;border-bottom:1px solid var(--line)}
+  .back-head .flip-btn{margin-top:0;padding-top:0;color:var(--ink)}
+  .back-head .flip-btn:hover{color:var(--accent)}
   .back-head span{font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-light)}
   .back-head h3{color:#fff}
   .slides{display:grid;flex:1;margin-top:14px}
   .ex{grid-area:1/1;opacity:0;visibility:hidden;transition:opacity .35s,visibility .35s}
   .ex.active{opacity:1;visibility:visible}
   .tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}
-  .tags span{font-size:12px;font-weight:500;padding:4px 10px;border-radius:999px;border:1px solid #3A3F48;color:#E4E6EA}
-  .tags span:first-child{background:var(--accent);border-color:var(--accent);color:#fff}
+  .tags span{font-size:12px;font-weight:500;padding:4px 10px;border-radius:999px;border:1px solid var(--line);color:var(--ink-soft);background:#fff}
+  .tags span:first-child{background:var(--bg-alt)}
   .ex p{
-    font-size:14px;line-height:1.55;color:#D5D8DD;
+    font-size:14px;line-height:1.55;color:var(--ink-soft);
     text-align:justify;-webkit-hyphens:auto;hyphens:auto
   }
   .ex p + p{margin-top:12px}
-  .ex p span{display:block;font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-light);margin-bottom:4px;text-align:left}
-  .ex.todo p{color:#6F757E;font-style:italic}
+  .ex p span{display:block;font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:4px;text-align:left}
+  .ex.todo p{color:var(--ink-faint);font-style:italic}
 
   .back-foot{
     margin-top:16px;padding-top:14px;border-top:1px solid #2A2E35;
@@ -164,16 +163,17 @@
   }
   .back-foot .flip-btn{margin-top:0;padding-top:0;color:#fff}
   .back-foot .flip-btn:hover{color:var(--accent-light)}
-  .pager{display:flex;align-items:center;gap:10px;font-size:13px;color:#A9AEB6;font-variant-numeric:tabular-nums}
+  .pager{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--ink-faint);font-variant-numeric:tabular-nums}
   .pager button{
-    width:30px;height:30px;border-radius:50%;border:1px solid #33373F;display:grid;place-items:center;
+    width:30px;height:30px;border-radius:50%;border:1px solid var(--line);color:var(--ink);display:grid;place-items:center;
     transition:background .2s,border-color .2s
   }
-  .pager button:hover{background:var(--accent);border-color:var(--accent)}
+  .pager button:hover{background:var(--ink);border-color:var(--ink);color:#fff}
   .pager svg{width:14px;height:14px}
 
   /* Experience */
-  .exp-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:80px;align-items:start}
+  .exp-grid{display:block}
+  .exp-text{max-width:860px}
   .exp-text p{margin-top:22px;color:var(--ink-soft);font-size:18px}
   .exp-list{list-style:none;margin-top:32px}
   .exp-list li{padding:14px 0;border-top:1px solid var(--line);display:flex;gap:14px;font-size:16px}
@@ -188,6 +188,19 @@
     transition:background .2s,color .2s,border-color .2s
   }
   .chip:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
+  .vc{margin:48px 0 0;max-width:860px}
+  .vc-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+  .vc svg{display:block;width:100%;min-width:520px;height:auto;font-family:'Inter',system-ui,sans-serif}
+  .vc figcaption{margin-top:16px;max-width:860px;font-size:17px;line-height:1.55;color:var(--ink-soft)}
+  .stats{display:grid;grid-template-columns:1fr 1fr;gap:24px;padding-bottom:28px}
+  .stats strong{display:block;font-size:44px;font-weight:500;letter-spacing:-.03em;line-height:1}
+  .stats span{display:block;margin-top:8px;font-size:14px;color:var(--ink-faint)}
+  .facts div{display:grid;grid-template-columns:110px 1fr;gap:16px;padding:16px 0;border-top:1px solid var(--line)}
+  .facts div:last-child{border-bottom:1px solid var(--line)}
+  .facts dt{font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint);padding-top:3px}
+  .facts dd{font-size:15px;line-height:1.6;color:var(--ink)}
+  .facts dd span{display:inline-block;white-space:nowrap}
+  .facts dd span:not(:last-child)::after{content:"·";margin:0 7px;color:var(--ink-faint)}
   .chip-group + .chip-group{margin-top:24px}
 
   /* How it works */
@@ -198,7 +211,7 @@
   .step p{margin-top:8px;color:var(--ink-soft);font-size:15px}
 
   /* Contact */
-  #contact{background:var(--dark);color:#fff;padding:130px 0 0}
+  #contact{background:var(--dark);color:#fff;padding:96px 0 0}
   #contact .eyebrow{color:var(--accent-light)}
   #contact h2{max-width:16ch;font-size:clamp(40px,6.5vw,80px)}
   #contact h2 em{color:var(--accent-light)}
@@ -207,7 +220,7 @@
   #contact .btn{background:#fff;color:var(--ink)}
   #contact .btn:hover{background:var(--accent);color:#fff}
   footer{
-    margin-top:120px;padding:32px 0;border-top:1px solid #23262C;
+    margin-top:80px;padding:28px 0;border-top:1px solid #23262C;
     display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:14px;color:#7D828A
   }
   footer a:hover{color:#fff}
@@ -224,9 +237,9 @@
   /* Responsive */
   @media (max-width:900px){
     .nav-links{display:none}
-    .hero{padding:80px 0 80px}
-    .hero-meta{grid-template-columns:repeat(2,1fr);margin-top:64px}
-    section{padding:84px 0}
+    .hero{padding:64px 0 64px}
+    section{padding:64px 0}
+    #contact{padding-top:72px}
     .pillars,.services{grid-template-columns:1fr}
     .exp-grid{grid-template-columns:1fr;gap:48px}
     .steps{grid-template-columns:repeat(2,1fr)}
@@ -259,20 +272,40 @@
 
 <header class="hero" id="top">
   <div class="wrap">
-    <h1 class="reveal">Senior product leadership. <em>On demand.</em></h1>
-    <p class="lead reveal">Helping companies make better product decisions, build stronger product organisations and accelerate value delivery of data, analytics and AI products.</p>
-    <div class="hero-cta reveal">
-      <a href="#services" class="btn">Explore services
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 3v10m0 0l-4-4m4 4l4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </a>
-      <a href="#contact" class="btn btn-ghost">Start a conversation</a>
-    </div>
-    <div class="hero-meta reveal">
-      <div><strong>15+</strong><span>years in product leadership</span></div>
-      <div><strong>6</strong><span>industries served</span></div>
-      <div><strong>6</strong><span>services, with clear deliverables</span></div>
-      <div><strong>100%</strong><span>remote &amp; flexible</span></div>
-    </div>
+    <h1><span class="w" style="--i:0">Senior</span> <span class="w" style="--i:1">product</span> <span class="w" style="--i:2">leadership.</span> <em><span class="w" style="--i:3">On</span> <span class="w" style="--i:4">demand.</span></em></h1>
+    <p class="lead">Helping companies make better product decisions, build stronger product organisations and accelerate value delivery of data, analytics and AI products.</p>
+    <figure class="vc">
+      <div class="vc-scroll"><svg viewBox="0 0 680 294" role="img" aria-labelledby="vc-t" xmlns="http://www.w3.org/2000/svg">
+<title id="vc-t">Digital transformation across the value chain, enabled by digital, data, analytics, AI and application products</title>
+<rect x="1" y="1" width="678" height="292" rx="16" fill="#FFFFFF" stroke="#E2E0D8"/>
+<rect x="24" y="24" width="632" height="190" rx="12" fill="#F1F0EA"/>
+<rect x="24" y="24" width="632" height="40" rx="12" fill="#14161A"/>
+<rect x="24" y="48" width="632" height="16" fill="#14161A"/>
+<text x="340" y="49" text-anchor="middle" font-size="15" font-weight="600" fill="#FFFFFF">Digital transformation</text>
+<path d="M608 38l8 6-8 6M592 38l8 6-8 6" fill="none" stroke="#FFFFFF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="92" y1="118" x2="588" y2="118" stroke="#14161A" stroke-width="1.5"/>
+<g fill="#2F4BFF"><circle cx="115" cy="118" r="3.5"/><circle cx="205" cy="118" r="3.5"/><circle cx="295" cy="118" r="3.5"/><circle cx="385" cy="118" r="3.5"/><circle cx="475" cy="118" r="3.5"/><circle cx="565" cy="118" r="3.5"/></g>
+<g stroke="#2F4BFF" stroke-width="1.2" stroke-dasharray="3 4"><line x1="115" y1="124" x2="115" y2="240"/><line x1="205" y1="124" x2="205" y2="240"/><line x1="295" y1="124" x2="295" y2="240"/><line x1="385" y1="124" x2="385" y2="240"/><line x1="475" y1="124" x2="475" y2="240"/><line x1="565" y1="124" x2="565" y2="240"/></g>
+<g fill="#FFFFFF" stroke="#14161A" stroke-width="1.5"><circle cx="70" cy="118" r="22"/><circle cx="160" cy="118" r="22"/><circle cx="250" cy="118" r="22"/><circle cx="340" cy="118" r="22"/><circle cx="430" cy="118" r="22"/><circle cx="520" cy="118" r="22"/><circle cx="610" cy="118" r="22"/></g>
+<g fill="none" stroke="#14161A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+<path d="M70 108v20M60 118h20"/>
+<path d="M152 114l14-6v20l-14-6z M152 114h-3v8h3 M154 122l2 6"/>
+<path d="M241 112h18v14h-18z M241 112l3-4h12l3 4 M250 112v5"/>
+<path d="M330 127v-10l6 4v-4l6 4v-10h6v16z"/>
+<path d="M418 112h13v11h-13z M431 116h8l3 4v3h-11"/>
+<path d="M512 109h10l8 9-8 9h-10z"/>
+<path d="M600 109h20v13h-11l-5 5v-5h-4z"/>
+</g>
+<g fill="#14161A"><circle cx="423" cy="125" r="2.2"/><circle cx="437" cy="125" r="2.2"/><circle cx="516" cy="118" r="1.8"/></g>
+<g font-size="12.5" fill="#14161A" text-anchor="middle">
+<text x="70" y="162">New product</text><text x="160" y="162">Marketing</text><text x="250" y="162">Procure</text><text x="340" y="162">Make</text><text x="430" y="162">Distribute</text><text x="520" y="162">Sell</text><text x="610" y="162">Service</text>
+</g>
+<g fill="#FFFFFF" stroke="#14161A" stroke-width="1.5"><rect x="101" y="240" width="28" height="28" rx="7"/><rect x="191" y="240" width="28" height="28" rx="7"/><rect x="281" y="240" width="28" height="28" rx="7"/><rect x="371" y="240" width="28" height="28" rx="7"/><rect x="461" y="240" width="28" height="28" rx="7"/><rect x="551" y="240" width="28" height="28" rx="7"/></g>
+<g fill="#14161A"><rect x="107" y="247" width="6" height="3" rx="1.5"/><rect x="107" y="252.5" width="10" height="3" rx="1.5"/><rect x="197" y="247" width="6" height="3" rx="1.5"/><rect x="197" y="252.5" width="10" height="3" rx="1.5"/><rect x="287" y="247" width="6" height="3" rx="1.5"/><rect x="287" y="252.5" width="10" height="3" rx="1.5"/><rect x="377" y="247" width="6" height="3" rx="1.5"/><rect x="377" y="252.5" width="10" height="3" rx="1.5"/><rect x="467" y="247" width="6" height="3" rx="1.5"/><rect x="467" y="252.5" width="10" height="3" rx="1.5"/><rect x="557" y="247" width="6" height="3" rx="1.5"/><rect x="557" y="252.5" width="10" height="3" rx="1.5"/></g>
+<g fill="#2F4BFF"><rect x="107" y="258" width="14" height="3" rx="1.5"/><rect x="197" y="258" width="14" height="3" rx="1.5"/><rect x="287" y="258" width="14" height="3" rx="1.5"/><rect x="377" y="258" width="14" height="3" rx="1.5"/><rect x="467" y="258" width="14" height="3" rx="1.5"/><rect x="557" y="258" width="14" height="3" rx="1.5"/></g>
+<g fill="none" stroke="#14161A" stroke-width="1.5" stroke-linecap="round"><circle cx="143" cy="247" r="4.5"/><path d="M135 267a8 8 0 0 1 16 0"/><circle cx="233" cy="247" r="4.5"/><path d="M225 267a8 8 0 0 1 16 0"/><circle cx="323" cy="247" r="4.5"/><path d="M315 267a8 8 0 0 1 16 0"/><circle cx="413" cy="247" r="4.5"/><path d="M405 267a8 8 0 0 1 16 0"/><circle cx="503" cy="247" r="4.5"/><path d="M495 267a8 8 0 0 1 16 0"/><circle cx="593" cy="247" r="4.5"/><path d="M585 267a8 8 0 0 1 16 0"/></g></svg></div>
+      <figcaption>Many companies go through digital transformation to gain competitive advantage, create customer value and adapt to industry disruption. This requires a more mature approach to product management.</figcaption>
+    </figure>
   </div>
 </header>
 
@@ -302,7 +335,7 @@
   <div class="wrap">
     <span class="eyebrow reveal">Services</span>
     <h2 class="reveal">Six services. <em>Six clear deliverables.</em></h2>
-    <p class="section-intro reveal">Every engagement is scoped around a tangible output you keep — not open-ended hours. Turn a card to see real examples.</p>
+    <p class="section-intro reveal">Every engagement is scoped around a specific deliverable you keep. Senior services only — no operational interim roles or open-ended hours. Turn a card to see real examples.</p>
 
     <div class="services">
 
@@ -310,11 +343,11 @@
       <article class="service reveal">
         <div class="card">
           <div class="face front">
-            <div class="service-head"><h3>Product discovery</h3><span class="idx">01</span></div>
-            <p>Validate problems, users and opportunities before committing budget and teams. Reduce the risk of building the wrong thing.</p>
+            <div class="service-head"><h3>Product discovery</h3><span class="head-meta"><svg class="ico" viewBox="0 0 32 32" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="14" cy="14" r="8"/><path d="M20 20l7 7"/><path d="M10.5 14l2.5 2.5 4.5-5" stroke="#2F4BFF"/></svg><span class="idx">01</span></span></div>
+            <p>Know whether an idea is worth investing in, before committing budget and teams.</p>
             <div class="deliverable">
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3 3 7-7" stroke="#2F4BFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              <div><b>Deliverable</b>Discovery report with validated problem statements and use cases, a business value opportunity assessment and a clear go / no-go recommendation.</div>
+              <div><b>Deliverable</b>Validated use cases, a business value opportunity assessment and a go / no-go recommendation.</div>
             </div>
             <button class="flip-btn" data-flip>See examples <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10m0 0L9 4m4 4l-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
           </div>
@@ -322,7 +355,7 @@
             <div class="back-head"><button class="flip-btn" data-flip>← Back</button><div class="pager"><button data-prev aria-label="Previous example"><svg viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button><span data-count>1 / 3</span><button data-next aria-label="Next example"><svg viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div></div>
             <div class="slides">
               <div class="ex">
-                <div class="tags"><span>Cross-functional</span><span>Demand planning</span></div>
+                <div class="tags"><span>Planning</span><span>Analytics</span></div>
                 <p><span>Challenge</span>Several business functions requested a demand forecast investment, without clear requirements or business value.</p>
                 <p><span>Approach</span>Interviewed customer service, logistics, business planning and finance to map current processes, problem statements and the business value of a demand forecast product.</p>
               </div>
@@ -332,7 +365,7 @@
                 <p><span>Approach</span>Mapped all supply chain decisions, user personas and business KPIs, then added a business value assessment to build the overall business case for AI investment.</p>
               </div>
               <div class="ex">
-                <div class="tags"><span>Marketing</span><span>Analytics</span></div>
+                <div class="tags"><span>Marketing</span><span>Data</span></div>
                 <p><span>Challenge</span>Marketing wanted to measure the effectiveness of campaign investments, but was unclear how.</p>
                 <p><span>Approach</span>Mapped current use cases and the business value of measurement as input to investment decisions, plus a feasibility study on data availability.</p>
               </div>
@@ -346,11 +379,11 @@
       <article class="service reveal">
         <div class="card">
           <div class="face front">
-            <div class="service-head"><h3>Product landscape</h3><span class="idx">02</span></div>
-            <p>A clear, shared view of your current products, platforms and capabilities — where they overlap, where the gaps are, and where value is being lost.</p>
+            <div class="service-head"><h3>Product landscape</h3><span class="head-meta"><svg class="ico" viewBox="0 0 32 32" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="6" width="7" height="7" rx="1.5"/><rect x="13" y="6" width="7" height="7" rx="1.5"/><rect x="22" y="6" width="7" height="7" rx="1.5" stroke="#2F4BFF" fill="#2F4BFF"/><rect x="4" y="17" width="7" height="7" rx="1.5"/><rect x="13" y="17" width="7" height="7" rx="1.5" stroke-dasharray="2 2"/><rect x="22" y="17" width="7" height="7" rx="1.5"/></svg><span class="idx">02</span></span></div>
+            <p>A clear view of current products and capabilities, including overlap, gaps and value being lost.</p>
             <div class="deliverable">
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3 3 7-7" stroke="#2F4BFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              <div><b>Deliverable</b>Product landscape map with an assessment of overlaps, gaps and prioritised improvement areas.</div>
+              <div><b>Deliverable</b>Product landscape map with prioritised improvement areas.</div>
             </div>
             <button class="flip-btn" data-flip>See examples <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10m0 0L9 4m4 4l-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
           </div>
@@ -358,12 +391,12 @@
             <div class="back-head"><button class="flip-btn" data-flip>← Back</button><div class="pager"><button data-prev aria-label="Previous example"><svg viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button><span data-count>1 / 2</span><button data-next aria-label="Next example"><svg viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div></div>
             <div class="slides">
               <div class="ex">
-                <div class="tags"><span>Cross-functional</span><span>Analytics</span></div>
+                <div class="tags"><span>Cross-domain</span><span>Analytics</span></div>
                 <p><span>Challenge</span>No holistic view of analytics products across sales, marketing, supply chain and customer service, resulting in duplication and gaps.</p>
                 <p><span>Approach</span>Mapped all products on the value chain with their user personas and operational processes. Duplicates were flagged for simplification; gaps fed into the annual budget.</p>
               </div>
               <div class="ex">
-                <div class="tags"><span>Business planning</span><span>Global</span></div>
+                <div class="tags"><span>Planning</span><span>Applications</span></div>
                 <p><span>Challenge</span>Three strong business planning products had been built separately in three global regions. It was unclear which one should scale globally.</p>
                 <p><span>Approach</span>Compared features, user journeys and requirement nuances to inform the product lifecycle and global scaling strategy.</p>
               </div>
@@ -377,11 +410,11 @@
       <article class="service reveal">
         <div class="card">
           <div class="face front">
-            <div class="service-head"><h3>Product vision &amp; roadmap</h3><span class="idx">03</span></div>
-            <p>Connect strategy to execution with a compelling vision and an outcome-driven roadmap that teams and stakeholders can align around.</p>
+            <div class="service-head"><h3>Product vision &amp; roadmap</h3><span class="head-meta"><svg class="ico" viewBox="0 0 32 32" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h10"/><path d="M9 15h12"/><path d="M14 23h14" stroke="#2F4BFF" stroke-width="3"/><path d="M4 28h24" stroke-width="1"/></svg><span class="idx">03</span></span></div>
+            <p>Align teams and stakeholders on where a product is going, and why.</p>
             <div class="deliverable">
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3 3 7-7" stroke="#2F4BFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              <div><b>Deliverable</b>Product vision, strategy narrative and an outcome-based roadmap with success metrics.</div>
+              <div><b>Deliverable</b>Product vision and an outcome-based roadmap with success metrics.</div>
             </div>
             <button class="flip-btn" data-flip>See examples <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10m0 0L9 4m4 4l-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
           </div>
@@ -389,12 +422,12 @@
             <div class="back-head"><button class="flip-btn" data-flip>← Back</button><div class="pager"><button data-prev aria-label="Previous example"><svg viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button><span data-count>1 / 2</span><button data-next aria-label="Next example"><svg viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div></div>
             <div class="slides">
               <div class="ex">
-                <div class="tags"><span>Supply chain</span><span>Inventory</span></div>
+                <div class="tags"><span>Supply chain</span><span>Applications</span></div>
                 <p><span>Challenge</span>Stakeholders disagreed on the future of a supply chain inventory trading product.</p>
                 <p><span>Approach</span>Defined the product vision and its revenue upside, and captured the business and technical case to limit its remaining lifecycle to 24 months in a roadmap.</p>
               </div>
               <div class="ex">
-                <div class="tags"><span>Cross-functional</span><span>Demand planning</span></div>
+                <div class="tags"><span>Planning</span><span>Analytics</span></div>
                 <p><span>Challenge</span>Finance, customer service and logistics all wanted a high-level demand forecast for budget and capacity planning. It was unclear who to serve first.</p>
                 <p><span>Approach</span>Built a demand forecast roadmap, prioritised by business value across teams, effort and reuse of the existing forecast product.</p>
               </div>
@@ -408,8 +441,8 @@
       <article class="service reveal">
         <div class="card">
           <div class="face front">
-            <div class="service-head"><h3>Product people coaching</h3><span class="idx">04</span></div>
-            <p>One-to-one and team coaching for product managers, product owners and product leaders who want to grow their craft and impact.</p>
+            <div class="service-head"><h3>Product people coaching</h3><span class="head-meta"><svg class="ico" viewBox="0 0 32 32" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="10" r="4"/><path d="M4 26a7 7 0 0 1 14 0"/><circle cx="23" cy="13" r="3" stroke="#2F4BFF"/><path d="M18 26a5 5 0 0 1 10 0" stroke="#2F4BFF"/></svg><span class="idx">04</span></span></div>
+            <p>Coaching for product owners, managers and leaders to grow their craft and impact.</p>
             <div class="deliverable">
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3 3 7-7" stroke="#2F4BFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
               <div><b>Deliverable</b>Maturity assessment and product frameworks applied to real examples in your company.</div>
@@ -420,12 +453,12 @@
             <div class="back-head"><button class="flip-btn" data-flip>← Back</button><div class="pager"><button data-prev aria-label="Previous example"><svg viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button><span data-count>1 / 2</span><button data-next aria-label="Next example"><svg viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div></div>
             <div class="slides">
               <div class="ex">
-                <div class="tags"><span>Product owners</span><span>Ways of working</span></div>
+                <div class="tags"><span>Cross-domain</span><span>Cross-product</span></div>
                 <p><span>Challenge</span>Product owners lacked standard templates in their way of working and struggled to communicate their strategy.</p>
                 <p><span>Approach</span>Trained them in standard templates for product vision, discovery and roadmap, applied directly to their own use cases.</p>
               </div>
               <div class="ex">
-                <div class="tags"><span>Product owners</span><span>Product vision</span></div>
+                <div class="tags"><span>Cross-domain</span><span>Cross-product</span></div>
                 <p><span>Challenge</span>Product owners worked individually, without collaborating at a higher capability level towards a common vision.</p>
                 <p><span>Approach</span>Brought them together in a workshop to learn product vision methodologies and apply them as a group to create a joint vision.</p>
               </div>
@@ -439,11 +472,11 @@
       <article class="service reveal">
         <div class="card">
           <div class="face front">
-            <div class="service-head"><h3>Product operating model</h3><span class="idx">05</span></div>
-            <p>Define how product work gets done — from roles and decision rights to governance, rituals and the metrics that matter.</p>
+            <div class="service-head"><h3>Product operating model</h3><span class="head-meta"><svg class="ico" viewBox="0 0 32 32" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="24" height="22" rx="3"/><path d="M4 12h24M4 19h24M12 5v22M20 5v22" stroke-width="1"/><circle cx="16" cy="8.5" r="1.8" fill="#2F4BFF" stroke="#2F4BFF"/><circle cx="24" cy="15.5" r="1.8" fill="#2F4BFF" stroke="#2F4BFF"/><circle cx="8" cy="23" r="1.8" fill="#2F4BFF" stroke="#2F4BFF"/></svg><span class="idx">05</span></span></div>
+            <p>Clarify who does what, and how product work is decided and delivered.</p>
             <div class="deliverable">
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3 3 7-7" stroke="#2F4BFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              <div><b>Deliverable</b>Operating model blueprint covering roles, decision rights, governance, cadence and KPIs.</div>
+              <div><b>Deliverable</b>Operating model blueprint: roles, RACI, governance, cadence and KPIs.</div>
             </div>
             <button class="flip-btn" data-flip>See examples <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10m0 0L9 4m4 4l-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
           </div>
@@ -451,12 +484,12 @@
             <div class="back-head"><button class="flip-btn" data-flip>← Back</button><div class="pager"><button data-prev aria-label="Previous example"><svg viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button><span data-count>1 / 2</span><button data-next aria-label="Next example"><svg viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div></div>
             <div class="slides">
               <div class="ex">
-                <div class="tags"><span>Delivery teams</span><span>End users</span></div>
+                <div class="tags"><span>Cross-domain</span><span>Cross-product</span></div>
                 <p><span>Challenge</span>Roles within a development team working with end users were unclear, resulting in low product adoption and unhappy end users.</p>
                 <p><span>Approach</span>Ran a team workshop to create a RACI and tested it on a real example, clarifying who owns the why, what, how and when.</p>
               </div>
               <div class="ex">
-                <div class="tags"><span>Delivery teams</span><span>Data & business</span></div>
+                <div class="tags"><span>Cross-domain</span><span>Cross-product</span></div>
                 <p><span>Challenge</span>Product development teams struggled to resolve delivery blockers across their ecosystem.</p>
                 <p><span>Approach</span>Identified the types of blockers with the team and set up dedicated meetings with data and business stakeholders, backed by a RACI, to escalate faster and speed up delivery.</p>
               </div>
@@ -470,11 +503,11 @@
       <article class="service reveal">
         <div class="card">
           <div class="face front">
-            <div class="service-head"><h3>Product organization design</h3><span class="idx">06</span></div>
-            <p>Shape a product organisation that scales — team topology, role definitions and career paths aligned with your strategy.</p>
+            <div class="service-head"><h3>Product organisation design</h3><span class="head-meta"><svg class="ico" viewBox="0 0 32 32" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="12" y="4" width="8" height="6" rx="1.5" stroke="#2F4BFF"/><path d="M16 10v5M7 15h18M7 15v4M16 15v4M25 15v4"/><rect x="3" y="19" width="8" height="6" rx="1.5"/><rect x="12" y="19" width="8" height="6" rx="1.5"/><rect x="21" y="19" width="8" height="6" rx="1.5"/></svg><span class="idx">06</span></span></div>
+            <p>Shape a product organisation that scales with your strategy.</p>
             <div class="deliverable">
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3 3 7-7" stroke="#2F4BFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              <div><b>Deliverable</b>Product organisation options with a recommended design, team structure, role profiles and a transition plan.</div>
+              <div><b>Deliverable</b>Organisation options, a recommended design, role profiles and a transition plan.</div>
             </div>
             <button class="flip-btn" data-flip>See examples <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10m0 0L9 4m4 4l-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
           </div>
@@ -482,12 +515,12 @@
             <div class="back-head"><button class="flip-btn" data-flip>← Back</button><div class="pager"><button data-prev aria-label="Previous example"><svg viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button><span data-count>1 / 2</span><button data-next aria-label="Next example"><svg viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div></div>
             <div class="slides">
               <div class="ex">
-                <div class="tags"><span>Healthcare</span><span>Supply chain</span></div>
+                <div class="tags"><span>Supply chain</span><span>Analytics</span></div>
                 <p><span>Challenge</span>At a healthcare company, three commercial business units ran an advanced analytics supply chain platform in their own way, relying heavily on external consultants.</p>
                 <p><span>Approach</span>Mapped the current organisation, future ambition and organisation options, and proposed a product chapter model with clear roles and skills, as strategic advice for the leadership team.</p>
               </div>
               <div class="ex">
-                <div class="tags"><span>Data & analytics</span><span>Organisation</span></div>
+                <div class="tags"><span>Data</span><span>Analytics</span></div>
                 <p><span>Challenge</span>A historical functional setup kept data, BI and data science teams separate, which was not future-proof.</p>
                 <p><span>Approach</span>Delivered a fit-for-purpose organisation design with product ways of working, integrating skill sets to deliver valuable products at speed without dependencies.</p>
               </div>
@@ -506,47 +539,15 @@
     <div class="exp-text">
       <span class="eyebrow reveal">Experience</span>
       <h2 class="reveal">Built in <em>complex, international</em> organisations.</h2>
-      <p class="reveal">A product director with 15+ years in product roles driving digital transformation and business process innovation, reporting into both business and IT organisations, across digital, data, analytics and AI.</p>
+      <p class="reveal">Experience of 15+ years in product roles driving digital transformation and business process innovation, reporting into both business and IT organisations, across digital, data, analytics and AI.</p>
       <ul class="exp-list reveal">
-        <li>Specialised in end-to-end supply chain, with additional experience across sales, marketing, merchandising and finance</li>
+        <li>Specialised in supply chain, with additional experience across sales, marketing, finance and new product development</li>
         <li>From hands-on product owner of a single team to leading multiple product teams</li>
         <li>Strategic advisor in operating model and organisation redesigns to evolve product and capability building</li>
+        <li>Across automotive, aerospace, semiconductor, retail, sporting goods and healthcare, in supply chain, planning, marketing, sales and service</li>
       </ul>
       <div class="inhouse reveal">
-        <b>Built from the inside.</b> All experience comes from in-house roles, not consultancy. That means knowing what it takes to make change stick inside an organisation, and having created lasting impact.
-      </div>
-    </div>
-    <div>
-      <div class="chip-group">
-        <p class="industries-label reveal">Industries</p>
-        <div class="chips reveal">
-          <span class="chip">Automotive</span>
-          <span class="chip">Aerospace</span>
-          <span class="chip">Semiconductor</span>
-          <span class="chip">Retail</span>
-          <span class="chip">Sporting goods</span>
-          <span class="chip">Healthcare</span>
-        </div>
-      </div>
-      <div class="chip-group">
-        <p class="industries-label reveal">Domains</p>
-        <div class="chips reveal">
-          <span class="chip">Supply chain</span>
-          <span class="chip">Planning</span>
-          <span class="chip">Marketing</span>
-          <span class="chip">Sales</span>
-          <span class="chip">Customer service</span>
-        </div>
-      </div>
-      <div class="chip-group">
-        <p class="industries-label reveal">Products</p>
-        <div class="chips reveal">
-          <span class="chip">Digital</span>
-          <span class="chip">Data</span>
-          <span class="chip">Analytics</span>
-          <span class="chip">AI</span>
-          <span class="chip">Applications</span>
-        </div>
+        <b>Built from the inside.</b> All experience comes from in-house roles, not consultancy. That means knowing what it takes to make change stick inside an organisation.
       </div>
     </div>
   </div>
