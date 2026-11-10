@@ -93,11 +93,11 @@
   .section-intro{margin-top:22px;max-width:600px;color:var(--ink-soft);font-size:18px}
 
   /* Pillars */
-  .pillars{margin-top:64px;display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
-  .pillar{background:var(--bg);padding:36px 32px}
-  .pillar .num{font-family:'Instrument Serif',serif;font-size:40px;color:var(--accent);line-height:1}
-  .pillar h3{margin-top:20px;font-size:21px;font-weight:600;letter-spacing:-.01em}
-  .pillar p{margin-top:10px;color:var(--ink-soft);font-size:16px}
+  .pillars{margin-top:48px;display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+  .pillar{background:var(--bg);padding:28px 28px}
+  .pillar h3{font-size:20px;font-weight:600;letter-spacing:-.01em;display:flex;align-items:baseline;gap:10px;white-space:nowrap}
+  .pillar .num{font-family:'Instrument Serif',serif;font-size:26px;font-weight:400;color:var(--accent);line-height:1}
+  .pillar p{margin-top:8px;color:var(--ink-soft);font-size:16px}
 
   /* Services — flip cards, all equal size */
   #services{background:var(--bg-alt)}
@@ -113,7 +113,7 @@
   .service.flipped .card{transform:rotateY(180deg)}
   .face{
     grid-area:1/1;display:flex;flex-direction:column;
-    padding:36px;border-radius:var(--radius);
+    padding:28px 30px;border-radius:var(--radius);
     -webkit-backface-visibility:hidden;backface-visibility:hidden;
     transition:box-shadow .25s,border-color .25s
   }
@@ -124,47 +124,49 @@
   .service-head{display:flex;justify-content:space-between;align-items:baseline;gap:16px}
   .idx{font-size:14px;color:var(--ink-faint);font-variant-numeric:tabular-nums}
   .service h3{font-size:26px;font-weight:500;letter-spacing:-.02em;line-height:1.2}
-  .front > p{margin-top:14px;color:var(--ink-soft);font-size:16px;flex:1}
+  .front > p{margin-top:12px;color:var(--ink-soft);font-size:16px}
   .deliverable{
-    margin-top:28px;padding:16px 18px;border-radius:10px;background:var(--accent-soft);
+    margin-top:20px;padding:14px 16px;border-radius:10px;background:var(--accent-soft);
     font-size:15px;display:flex;gap:12px;align-items:flex-start
   }
   .deliverable svg{flex-shrink:0;margin-top:3px}
   .deliverable b{display:block;font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:2px}
 
   .flip-btn{
-    margin-top:22px;align-self:flex-start;display:inline-flex;align-items:center;gap:8px;
+    margin-top:auto;padding-top:18px;align-self:flex-start;display:inline-flex;align-items:center;gap:8px;
     font-size:14px;font-weight:600;color:var(--ink);transition:color .2s,gap .2s
   }
   .flip-btn:hover{color:var(--accent);gap:12px}
   .flip-btn svg{width:16px;height:16px}
 
-  .back-head{display:flex;justify-content:space-between;align-items:baseline;gap:16px}
+  .back-head{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-bottom:12px;border-bottom:1px solid #2A2E35}
+  .back-head .flip-btn{margin-top:0;padding-top:0;color:#fff}
+  .back-head .flip-btn:hover{color:var(--accent-light)}
   .back-head span{font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-light)}
   .back-head h3{color:#fff}
-  .slides{display:grid;flex:1;margin-top:22px}
+  .slides{display:grid;flex:1;margin-top:14px}
   .ex{grid-area:1/1;opacity:0;visibility:hidden;transition:opacity .35s,visibility .35s}
   .ex.active{opacity:1;visibility:visible}
-  .tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px}
+  .tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}
   .tags span{font-size:12px;font-weight:500;padding:4px 10px;border-radius:999px;border:1px solid #3A3F48;color:#E4E6EA}
   .tags span:first-child{background:var(--accent);border-color:var(--accent);color:#fff}
   .ex p{
-    font-size:15px;line-height:1.6;color:#D5D8DD;
+    font-size:14px;line-height:1.55;color:#D5D8DD;
     text-align:justify;-webkit-hyphens:auto;hyphens:auto
   }
-  .ex p + p{margin-top:16px}
+  .ex p + p{margin-top:12px}
   .ex p span{display:block;font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-light);margin-bottom:4px;text-align:left}
   .ex.todo p{color:#6F757E;font-style:italic}
 
   .back-foot{
-    margin-top:24px;padding-top:18px;border-top:1px solid #2A2E35;
+    margin-top:16px;padding-top:14px;border-top:1px solid #2A2E35;
     display:flex;justify-content:space-between;align-items:center;gap:12px
   }
-  .back-foot .flip-btn{margin-top:0;color:#fff}
+  .back-foot .flip-btn{margin-top:0;padding-top:0;color:#fff}
   .back-foot .flip-btn:hover{color:var(--accent-light)}
   .pager{display:flex;align-items:center;gap:10px;font-size:13px;color:#A9AEB6;font-variant-numeric:tabular-nums}
   .pager button{
-    width:34px;height:34px;border-radius:50%;border:1px solid #33373F;display:grid;place-items:center;
+    width:30px;height:30px;border-radius:50%;border:1px solid #33373F;display:grid;place-items:center;
     transition:background .2s,border-color .2s
   }
   .pager button:hover{background:var(--accent);border-color:var(--accent)}
@@ -179,20 +181,20 @@
   .exp-list li::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--accent);margin-top:10px;flex-shrink:0}
   .inhouse{margin-top:32px;padding:20px 22px;border-left:3px solid var(--accent);background:#fff;border-radius:0 10px 10px 0;font-size:16px;color:var(--ink-soft)}
   .inhouse b{color:var(--ink)}
-  .industries-label{font-size:13px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:20px}
-  .chips{display:flex;flex-wrap:wrap;gap:10px}
+  .industries-label{font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:10px}
+  .chips{display:flex;flex-wrap:wrap;gap:6px}
   .chip{
-    padding:12px 20px;border:1px solid var(--line);border-radius:999px;font-size:16px;background:#fff;
+    padding:6px 12px;border:1px solid var(--line);border-radius:999px;font-size:14px;background:#fff;
     transition:background .2s,color .2s,border-color .2s
   }
   .chip:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
-  .chip-group + .chip-group{margin-top:44px}
+  .chip-group + .chip-group{margin-top:24px}
 
   /* How it works */
-  .steps{margin-top:64px;display:grid;grid-template-columns:repeat(4,1fr);gap:28px;counter-reset:step}
+  .steps{margin-top:48px;display:grid;grid-template-columns:repeat(4,1fr);gap:28px;counter-reset:step}
   .step{border-top:2px solid var(--ink);padding-top:22px;counter-increment:step}
-  .step::before{content:"0" counter(step);font-size:14px;color:var(--ink-faint);font-variant-numeric:tabular-nums}
-  .step h3{margin-top:10px;font-size:20px;font-weight:600;letter-spacing:-.01em}
+  .step h3{font-size:20px;font-weight:600;letter-spacing:-.01em;display:flex;align-items:baseline;gap:10px}
+  .step h3::before{content:"0" counter(step);font-size:14px;font-weight:500;color:var(--accent);font-variant-numeric:tabular-nums}
   .step p{margin-top:8px;color:var(--ink-soft);font-size:15px}
 
   /* Contact */
@@ -232,7 +234,9 @@
   @media (max-width:520px){
     body{font-size:16px}
     .wrap{padding:0 16px}
-    .face{padding:28px 24px}
+    .face{padding:24px 20px}
+    .pillar{padding:22px 20px}
+    .pillar h3{font-size:18px}
     .steps{grid-template-columns:1fr}
     .nav .btn{display:none}
   }
@@ -279,18 +283,15 @@
     <p class="section-intro reveal">Independent senior product leadership, available flexibly on a fractional basis. You get director-level thinking exactly when you need it, focused on a concrete outcome.</p>
     <div class="pillars">
       <div class="pillar reveal">
-        <div class="num">i.</div>
-        <h3>Better product decisions</h3>
+        <h3><span class="num">i.</span>Better product decisions</h3>
         <p>Clarity on what to build, why, and for whom — grounded in evidence rather than opinion.</p>
       </div>
       <div class="pillar reveal">
-        <div class="num">ii.</div>
-        <h3>Stronger product organisations</h3>
+        <h3><span class="num">ii.</span>Stronger product organisations</h3>
         <p>The people, roles, structures and ways of working that let product teams perform.</p>
       </div>
       <div class="pillar reveal">
-        <div class="num">iii.</div>
-        <h3>Faster value delivery</h3>
+        <h3><span class="num">iii.</span>Faster value delivery</h3>
         <p>Turning data, analytics and AI investments into products that create measurable value.</p>
       </div>
     </div>
@@ -318,7 +319,7 @@
             <button class="flip-btn" data-flip>See examples <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10m0 0L9 4m4 4l-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
           </div>
           <div class="face back">
-            <div class="back-head"><h3>Product discovery</h3><span>Examples</span></div>
+            <div class="back-head"><button class="flip-btn" data-flip>← Back</button><div class="pager"><button data-prev aria-label="Previous example"><svg viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button><span data-count>1 / 3</span><button data-next aria-label="Next example"><svg viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div></div>
             <div class="slides">
               <div class="ex">
                 <div class="tags"><span>Cross-functional</span><span>Demand planning</span></div>
@@ -336,10 +337,7 @@
                 <p><span>Approach</span>Mapped current use cases and the business value of measurement as input to investment decisions, plus a feasibility study on data availability.</p>
               </div>
             </div>
-            <div class="back-foot">
-              <button class="flip-btn" data-flip>← Back</button>
-              <div class="pager"><button data-prev aria-label="Previous example"><svg viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button><span data-count>1 / 3</span><button data-next aria-label="Next example"><svg viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div>
-            </div>
+            
           </div>
         </div>
       </article>
@@ -357,7 +355,7 @@
             <button class="flip-btn" data-flip>See examples <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10m0 0L9 4m4 4l-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
           </div>
           <div class="face back">
-            <div class="back-head"><h3>Product landscape</h3><span>Examples</span></div>
+            <div class="back-head"><button class="flip-btn" data-flip>← Back</button><div class="pager"><button data-prev aria-label="Previous example"><svg viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button><span data-count>1 / 2</span><button data-next aria-label="Next example"><svg viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div></div>
             <div class="slides">
               <div class="ex">
                 <div class="tags"><span>Cross-functional</span><span>Analytics</span></div>
@@ -370,10 +368,7 @@
                 <p><span>Approach</span>Compared features, user journeys and requirement nuances to inform the product lifecycle and global scaling strategy.</p>
               </div>
             </div>
-            <div class="back-foot">
-              <button class="flip-btn" data-flip>← Back</button>
-              <div class="pager"><button data-prev aria-label="Previous example"><svg viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button><span data-count>1 / 2</span><button data-next aria-label="Next example"><svg viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div>
-            </div>
+            
           </div>
         </div>
       </article>
@@ -391,7 +386,7 @@
             <button class="flip-btn" data-flip>See examples <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10m0 0L9 4m4 4l-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
           </div>
           <div class="face back">
-            <div class="back-head"><h3>Product vision &amp; roadmap</h3><span>Examples</span></div>
+            <div class="back-head"><button class="flip-btn" data-flip>← Back</button><div class="pager"><button data-prev aria-label="Previous example"><svg viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button><span data-count>1 / 2</span><button data-next aria-label="Next example"><svg viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div></div>
             <div class="slides">
               <div class="ex">
                 <div class="tags"><span>Supply chain</span><span>Inventory</span></div>
@@ -404,10 +399,7 @@
                 <p><span>Approach</span>Built a demand forecast roadmap, prioritised by business value across teams, effort and reuse of the existing forecast product.</p>
               </div>
             </div>
-            <div class="back-foot">
-              <button class="flip-btn" data-flip>← Back</button>
-              <div class="pager"><button data-prev aria-label="Previous example"><svg viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button><span data-count>1 / 2</span><button data-next aria-label="Next example"><svg viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div>
-            </div>
+            
           </div>
         </div>
       </article>
@@ -425,7 +417,7 @@
             <button class="flip-btn" data-flip>See examples <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10m0 0L9 4m4 4l-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
           </div>
           <div class="face back">
-            <div class="back-head"><h3>Product people coaching</h3><span>Examples</span></div>
+            <div class="back-head"><button class="flip-btn" data-flip>← Back</button><div class="pager"><button data-prev aria-label="Previous example"><svg viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button><span data-count>1 / 2</span><button data-next aria-label="Next example"><svg viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div></div>
             <div class="slides">
               <div class="ex">
                 <div class="tags"><span>Product owners</span><span>Ways of working</span></div>
@@ -438,10 +430,7 @@
                 <p><span>Approach</span>Brought them together in a workshop to learn product vision methodologies and apply them as a group to create a joint vision.</p>
               </div>
             </div>
-            <div class="back-foot">
-              <button class="flip-btn" data-flip>← Back</button>
-              <div class="pager"><button data-prev aria-label="Previous example"><svg viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button><span data-count>1 / 2</span><button data-next aria-label="Next example"><svg viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div>
-            </div>
+            
           </div>
         </div>
       </article>
@@ -459,7 +448,7 @@
             <button class="flip-btn" data-flip>See examples <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10m0 0L9 4m4 4l-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
           </div>
           <div class="face back">
-            <div class="back-head"><h3>Product operating model</h3><span>Examples</span></div>
+            <div class="back-head"><button class="flip-btn" data-flip>← Back</button><div class="pager"><button data-prev aria-label="Previous example"><svg viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button><span data-count>1 / 2</span><button data-next aria-label="Next example"><svg viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div></div>
             <div class="slides">
               <div class="ex">
                 <div class="tags"><span>Delivery teams</span><span>End users</span></div>
@@ -472,10 +461,7 @@
                 <p><span>Approach</span>Identified the types of blockers with the team and set up dedicated meetings with data and business stakeholders, backed by a RACI, to escalate faster and speed up delivery.</p>
               </div>
             </div>
-            <div class="back-foot">
-              <button class="flip-btn" data-flip>← Back</button>
-              <div class="pager"><button data-prev aria-label="Previous example"><svg viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button><span data-count>1 / 2</span><button data-next aria-label="Next example"><svg viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div>
-            </div>
+            
           </div>
         </div>
       </article>
@@ -493,7 +479,7 @@
             <button class="flip-btn" data-flip>See examples <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10m0 0L9 4m4 4l-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
           </div>
           <div class="face back">
-            <div class="back-head"><h3>Product organization design</h3><span>Examples</span></div>
+            <div class="back-head"><button class="flip-btn" data-flip>← Back</button><div class="pager"><button data-prev aria-label="Previous example"><svg viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button><span data-count>1 / 2</span><button data-next aria-label="Next example"><svg viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div></div>
             <div class="slides">
               <div class="ex">
                 <div class="tags"><span>Healthcare</span><span>Supply chain</span></div>
@@ -506,10 +492,7 @@
                 <p><span>Approach</span>Delivered a fit-for-purpose organisation design with product ways of working, integrating skill sets to deliver valuable products at speed without dependencies.</p>
               </div>
             </div>
-            <div class="back-foot">
-              <button class="flip-btn" data-flip>← Back</button>
-              <div class="pager"><button data-prev aria-label="Previous example"><svg viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button><span data-count>1 / 2</span><button data-next aria-label="Next example"><svg viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div>
-            </div>
+            
           </div>
         </div>
       </article>
